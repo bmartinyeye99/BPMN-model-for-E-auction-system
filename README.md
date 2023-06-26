@@ -42,6 +42,26 @@ The auction begins at a specified time set by the seller. When the seller adds a
 **Transitions:** record the auction, fill in details, display summary  
 **States:** auction recorded, item added, required basic details filled
 
+### Process 4: Payment for the Item
+
+**Description:** If a bidder wins an auction, they receive a notification about their victory. Subsequently, the system displays the option to make a payment to the seller for the item. The bidder is provided with the choice to pay by credit card or through PayPal. Once a successful transaction is completed by both parties (seller and bidder), they are notified. The seller is prompted to select a method for delivering the products, which will be sent to the winning bidder. The seller chooses a delivery service, and the package is then handed over to a courier.
+
+- **Input tokens:** notification of victory  
+- **Output tokens:** item shipped, item removed from auction  
+- **Transitions:** receipt of payment notification, filling in delivery details, online payment by card/PayPal  
+- **States:** notification sent, payment method selected, item paid
+
+### Process 5: User Login
+
+**Description:** The user wants to log in or register in the system. In the case of logging in, the user fills in their email and password. If they do not have these credentials or have forgotten them, the system redirects them to the registration process. After successful login, the system verifies the provided information and, if correct, redirects the user to a mode selection where they choose whether to proceed as a seller or buyer. If the entered information is incorrect, the system prompts the user to re-enter the details. In the case of registration, the user provides their name, surname, email, and password. The system sends a verification email to the provided email address, which the user must confirm. After confirmation, the user is redirected to the login page.
+
+- **Input tokens:** password, username, (personal details for registration)  
+- **Output tokens:** user logged in, account created (in case of registration)  
+- **Transitions:** filling in registration details, user existence confirmation, mode selection  
+- **States:** user not logged in, user verified, seller account
+
+### Conclusion
+
 In the project, we achieved our goal, which was to design a system for electronic auctions for small, standardized purchases of goods and services. We utilized knowledge from practical exercises and lectures. Initially, we described the processes that our system should fulfill. Then, we created a clear process model consisting of these described processes. We defined process roles and assigned them to specific activities within the processes. We also documented these activities in a table.
 
 Based on the process descriptions, we designed their models using Petri nets. We made several changes to the Petri net models during testing, as we discovered simpler solutions and corrected any issues that arose. None of our transitions are L0 live. For one of the processes, we also constructed a reachability graph. Additionally, we designed BPMN models for all processes.
